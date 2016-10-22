@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agenciaviajes;
+package agenciaviajes.abordar;
 
+import agenciaviajes.HomeUI;
+import agenciaviajes.Pasajeros;
+import agenciaviajes.Vuelos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -14,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class AbordajeUI extends javax.swing.JFrame {
 
+    private HomeUI homePage;
     /**
      * Creates new form AbordajeUI
      */
@@ -55,7 +59,6 @@ public class AbordajeUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agencia de viajes");
-        setPreferredSize(new java.awt.Dimension(325, 468));
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Abordaje", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 153, 153))); // NOI18N
@@ -214,7 +217,7 @@ public class AbordajeUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -229,9 +232,10 @@ public class AbordajeUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        HomeUI homePage = new HomeUI();
-        homePage.setVisible(true);
-        
+        if (homePage == null){
+            homePage = new HomeUI();
+        }        
+        homePage.setVisible(true);        
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 

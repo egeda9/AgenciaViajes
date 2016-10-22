@@ -5,14 +5,10 @@
  */
 package agenciaviajes;
 
+import agenciaviajes.abordar.AbordajeUI;
+import agenciaviajes.administracion.AeronavesUI;
+import agenciaviajes.checkin.CheckinUI;
 import agenciaviajes.ventas.VuelosUi;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,8 +16,12 @@ import javax.swing.JOptionPane;
  */
 public class HomeUI extends javax.swing.JFrame {
 
-    
     private static final String IMG_PATH = "src/images/world-colourful-represents-colours-globalise-and-multicolored-100271552.jpg";
+    private CheckinUI checkinpage;
+    private AbordajeUI abordajepage;
+    private VuelosUi vuelosPage;
+    private AeronavesUI aeronavesPage;
+    
     /**
      * Creates new form HomeUI
      */
@@ -42,6 +42,7 @@ public class HomeUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -56,7 +57,16 @@ public class HomeUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setText("Bienvenido a la aplicación para la administración y gestión de viajes");
 
-        jMenu2.setText("Home");
+        jMenu2.setText("Administración");
+
+        jMenuItem1.setText("Aeronaves");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Buscar Vuelos");
@@ -130,16 +140,20 @@ public class HomeUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu5ActionPerformed
 
     private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-        CheckinUI checkinpage = new CheckinUI();
-        checkinpage.setVisible(true);
         
+        if (checkinpage == null) {
+            checkinpage = new CheckinUI();            
+        }
+        checkinpage.setVisible(true);        
         this.setVisible(false);
     }//GEN-LAST:event_jMenu5MouseClicked
 
     private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
-        AbordajeUI abordajepage = new AbordajeUI();
-        abordajepage.setVisible(true);
         
+        if (abordajepage == null) {
+            abordajepage = new AbordajeUI();
+        }        
+        abordajepage.setVisible(true);        
         this.setVisible(false);
     }//GEN-LAST:event_jMenu6MouseClicked
 
@@ -148,10 +162,20 @@ public class HomeUI extends javax.swing.JFrame {
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         
-        VuelosUi vuelosPage = new VuelosUi();
+        if (vuelosPage == null) {
+            vuelosPage = new VuelosUi();
+        }        
         vuelosPage.setVisible(true);     
         this.setVisible(false);
     }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        if (aeronavesPage == null) {
+            aeronavesPage = new AeronavesUI();
+        }        
+        aeronavesPage.setVisible(true);     
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,5 +222,6 @@ public class HomeUI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

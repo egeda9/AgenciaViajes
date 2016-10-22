@@ -5,6 +5,8 @@
  */
 package agenciaviajes;
 
+import agenciaviajes.dbconector.ContextoDatos;
+
 /**
  *
  * @author juarojas

@@ -5,12 +5,17 @@
  */
 package agenciaviajes.ventas;
 
+import agenciaviajes.HomeUI;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author CamiloAlejandro
  */
 public class CompraVuelo extends javax.swing.JPanel {
 
+    private HomeUI homePage;
+    private VuelosUi vuelosPage;
     /**
      * Creates new form CompraVuelo
      */
@@ -130,6 +135,11 @@ public class CompraVuelo extends javax.swing.JPanel {
         jPanel1.add(jButton1);
 
         jButton2.setText("Comprar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_END);
@@ -148,8 +158,12 @@ public class CompraVuelo extends javax.swing.JPanel {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JOptionPane.showMessageDialog(null, "Compra completada exitosamente", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

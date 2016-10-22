@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agenciaviajes.ventas;
+package agenciaviajes.administracion;
 
 /**
  *
- * @author CamiloAlejandro
+ * @author JuanFernando
  */
-public class VuelosUi extends javax.swing.JFrame{
+public class RutasUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form VuelosUi
+     * Creates new form RutasUI
      */
-    public VuelosUi() {
+    public RutasUI() {
         initComponents();
     }
 
@@ -27,20 +27,18 @@ public class VuelosUi extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        busquedaVuelo1 = new agenciaviajes.ventas.BusquedaVuelo();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Agencia de viajes");
-        setMinimumSize(new java.awt.Dimension(400, 600));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Venta vuelos"));
-        jPanel1.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(busquedaVuelo1, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
-
-        getAccessibleContext().setAccessibleName("");
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -62,34 +60,24 @@ public class VuelosUi extends javax.swing.JFrame{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VuelosUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RutasUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VuelosUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RutasUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VuelosUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RutasUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VuelosUi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RutasUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VuelosUi().setVisible(true);
+                new RutasUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private agenciaviajes.ventas.BusquedaVuelo busquedaVuelo1;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-
-    public BusquedaVuelo getBusquedaVuelo1() {
-        return busquedaVuelo1;
-    }
-
-    public void setBusquedaVuelo1(BusquedaVuelo busquedaVuelo1) {
-        this.busquedaVuelo1 = busquedaVuelo1;
-    }
 }

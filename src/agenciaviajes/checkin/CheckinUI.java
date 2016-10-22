@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agenciaviajes;
+package agenciaviajes.checkin;
 
+import agenciaviajes.HomeUI;
+import agenciaviajes.Pasajeros;
+import agenciaviajes.Vuelos;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +16,8 @@ import javax.swing.JOptionPane;
  */
 public class CheckinUI extends javax.swing.JFrame {
 
+    private HomeUI homePage;
+    
     /**
      * Creates new form CheckinUI
      */
@@ -73,7 +78,7 @@ public class CheckinUI extends javax.swing.JFrame {
         setTitle("Agencia de viajes");
         setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Check-in", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(51, 153, 255)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Check-in", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(51, 153, 255))); // NOI18N
 
         jTextField1.setToolTipText("Identificación");
         jTextField1.setName("chk_txt_pasajero"); // NOI18N
@@ -91,7 +96,7 @@ public class CheckinUI extends javax.swing.JFrame {
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Vuelo info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(153, 153, 255)));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Vuelo info", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(153, 153, 255))); // NOI18N
 
         jLabel5.setText("Aerolínea:");
         jLabel5.setName("chk_lbl_aerolinea"); // NOI18N
@@ -400,9 +405,11 @@ public class CheckinUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        HomeUI homePage = new HomeUI();
-        homePage.setVisible(true);
         
+        if (homePage == null){
+            homePage = new HomeUI();
+        }        
+        homePage.setVisible(true);        
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
 
