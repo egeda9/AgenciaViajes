@@ -10,6 +10,7 @@ import agenciaviajes.administracion.AerolineasUI;
 import agenciaviajes.administracion.AeronavesUI;
 import agenciaviajes.administracion.RutasUI;
 import agenciaviajes.checkin.CheckinUI;
+import agenciaviajes.pasajerofrecuente.FrecuentesUI;
 import agenciaviajes.ventas.VuelosUi;
 
 /**
@@ -25,6 +26,7 @@ public class HomeUI extends javax.swing.JFrame {
     private AeronavesUI aeronavesPage;
     private RutasUI rutasPage;
     private AerolineasUI aerolineasPage;
+    private FrecuentesUI frecuentesPage;
     
     /**
      * Creates new form HomeUI
@@ -127,6 +129,11 @@ public class HomeUI extends javax.swing.JFrame {
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Programa de pasajeros frecuentes");
+        jMenu7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu7MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu7);
 
         jMenu1.setText("Acerca de");
@@ -187,7 +194,6 @@ public class HomeUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu3ActionPerformed
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
-        
         if (vuelosPage == null) {
             vuelosPage = new VuelosUi();
         }        
@@ -218,6 +224,14 @@ public class HomeUI extends javax.swing.JFrame {
         aerolineasPage.setVisible(true);     
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu7MouseClicked
+        if (frecuentesPage == null) {
+            frecuentesPage = new FrecuentesUI();
+        }        
+        frecuentesPage.setVisible(true);     
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenu7MouseClicked
 
     /**
      * @param args the command line arguments
