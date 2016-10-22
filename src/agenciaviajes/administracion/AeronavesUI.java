@@ -69,7 +69,7 @@ public class AeronavesUI extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)), "Aeronaves"));
 
-        jLabel1.setText("Número de Matricula:");
+        jLabel1.setText("Número de matricula:");
 
         jLabel2.setText("Número de pasajeros:");
 

@@ -6,7 +6,9 @@
 package agenciaviajes;
 
 import agenciaviajes.abordar.AbordajeUI;
+import agenciaviajes.administracion.AerolineasUI;
 import agenciaviajes.administracion.AeronavesUI;
+import agenciaviajes.administracion.RutasUI;
 import agenciaviajes.checkin.CheckinUI;
 import agenciaviajes.ventas.VuelosUi;
 
@@ -21,6 +23,8 @@ public class HomeUI extends javax.swing.JFrame {
     private AbordajeUI abordajepage;
     private VuelosUi vuelosPage;
     private AeronavesUI aeronavesPage;
+    private RutasUI rutasPage;
+    private AerolineasUI aerolineasPage;
     
     /**
      * Creates new form HomeUI
@@ -42,11 +46,14 @@ public class HomeUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agencia de viajes");
@@ -58,6 +65,22 @@ public class HomeUI extends javax.swing.JFrame {
         jLabel2.setText("Bienvenido a la aplicación para la administración y gestión de viajes");
 
         jMenu2.setText("Administración");
+
+        jMenuItem3.setText("Aerolíneas");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem2.setText("Rutas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem2);
 
         jMenuItem1.setText("Aeronaves");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -103,8 +126,11 @@ public class HomeUI extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu6);
 
-        jMenu7.setText("Acerca de");
+        jMenu7.setText("Programa de pasajeros frecuentes");
         jMenuBar1.add(jMenu7);
+
+        jMenu1.setText("Acerca de");
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -177,6 +203,22 @@ public class HomeUI extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        if (rutasPage == null) {
+            rutasPage = new RutasUI();
+        }        
+        rutasPage.setVisible(true);     
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        if (aerolineasPage == null) {
+            aerolineasPage = new AerolineasUI();
+        }        
+        aerolineasPage.setVisible(true);     
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,6 +258,7 @@ public class HomeUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu5;
@@ -223,5 +266,7 @@ public class HomeUI extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
