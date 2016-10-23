@@ -44,15 +44,13 @@ public class CompraVuelo extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        efectiboBtn = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -91,7 +89,7 @@ public class CompraVuelo extends javax.swing.JPanel {
 
         jLabel4.setText("Fecha de nacimiento");
         jPanel1.add(jLabel4);
-        jPanel1.add(jTextField3);
+        jPanel1.add(jDateChooser1);
 
         jLabel5.setText("Teléfono");
         jPanel1.add(jLabel5);
@@ -104,27 +102,8 @@ public class CompraVuelo extends javax.swing.JPanel {
         jLabel7.setText("Forma de pago");
         jPanel1.add(jLabel7);
 
-        formaPago.add(efectiboBtn);
-        efectiboBtn.setText("Efectivo");
-        efectiboBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                efectiboBtnActionPerformed(evt);
-            }
-        });
-        jPanel1.add(efectiboBtn);
-
-        formaPago.add(jRadioButton1);
-        jRadioButton1.setText("Tarjeta de crédito");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jRadioButton1);
-
-        formaPago.add(jRadioButton2);
-        jRadioButton2.setText("Millas");
-        jPanel1.add(jRadioButton2);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta de crédito", "Millas" }));
+        jPanel1.add(jComboBox1);
 
         jButton1.setText("Atras");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -149,14 +128,6 @@ public class CompraVuelo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void efectiboBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_efectiboBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_efectiboBtnActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -167,10 +138,11 @@ public class CompraVuelo extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton efectiboBtn;
     private javax.swing.ButtonGroup formaPago;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -180,12 +152,9 @@ public class CompraVuelo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;

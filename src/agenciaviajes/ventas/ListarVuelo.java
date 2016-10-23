@@ -37,6 +37,7 @@ public class ListarVuelo extends javax.swing.JPanel {
         jTextPane2 = new javax.swing.JTextPane();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createTitledBorder("Vuelos disponibles"));
@@ -62,7 +63,15 @@ public class ListarVuelo extends javax.swing.JPanel {
         jButton2.setText("Regresar");
         jPanel1.add(jButton2);
 
-        jButton3.setText("Seleccionar");
+        jButton1.setText("Reservar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+
+        jButton3.setText("Comprar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -80,8 +89,16 @@ public class ListarVuelo extends javax.swing.JPanel {
         topFrame.repaint();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        this.getParent().add(new ReservarVuelo());
+        topFrame.setSize(700, 850);
+        topFrame.repaint();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JList<String> jList1;

@@ -5,22 +5,20 @@
         <group>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/HomeUI.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/ventas/CompraVuelo.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/ventas/BusquedaVuelo.java</file>
+            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/checkin/ControlCheckin.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/checkin/CheckinUI.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/AerolineasUI.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/Rutas.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/ControlAeronaves.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/ventas/VuelosUi.java</file>
+            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/abordar/ControlAbordaje.java</file>
+            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/pasajerofrecuente/CrearFrecuentesUI.java</file>
+            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/ventas/ReservarVuelo.java</file>
+            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/pasajerofrecuente/Frecuentes.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/ControlRutas.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/Aerolineas.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/pasajerofrecuente/FrecuentesUI.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/AeronavesUI.java</file>
             <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/ventas/ListarVuelo.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/ControlAerolineas.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/dbconector/ContextoDatos.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/abordar/AbordajeUI.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/Aeronaves.java</file>
-            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/administracion/RutasUI.java</file>
+            <file>file:/C:/Users/JuanFernando/Desktop/Documentos/Maestria/Informatica/Clases%20analisis/AgenciaViajes-master/src/agenciaviajes/pasajerofrecuente/ControlFrecuente.java</file>
         </group>
     </open-files>
 </project-private>
