@@ -6,6 +6,7 @@
 package agenciaviajes.administracion;
 
 import agenciaviajes.HomeUI;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -71,6 +72,11 @@ public class RutasUI extends javax.swing.JFrame {
         jLabel5.setText("#");
 
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Regresar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -183,6 +189,27 @@ public class RutasUI extends javax.swing.JFrame {
         homePage.setVisible(true);        
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if ("".equals(jTextField1.getText())){
+            JOptionPane.showMessageDialog(null, "Por favor complete la información", "Información incompleta", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        else {
+            try
+            {
+                int numeroMillas = Integer.parseInt(jTextField1.getText());
+                ControlRutas rutas = new ControlRutas();
+                rutas.CrearRutas(jComboBox1.getSelectedItem().toString(), jComboBox2.getSelectedItem().toString(), jComboBox3.getSelectedItem().toString(), numeroMillas, 1);
+                JOptionPane.showMessageDialog(null, "Ruta guardada exitosamente", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            catch(Exception ex)
+            {
+                JOptionPane.showMessageDialog(null, "Por favor valide los datos ingresados", "Error durante el proceso", JOptionPane.ERROR_MESSAGE);
+            }  
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
