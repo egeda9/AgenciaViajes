@@ -6,6 +6,8 @@
 package agenciaviajes.administracion;
 
 import agenciaviajes.HomeUI;
+import javax.swing.JOptionPane;
+import java.util.Date;
 
 /**
  *
@@ -19,7 +21,7 @@ public class AerolineasUI extends javax.swing.JFrame {
      * Creates new form AerolineasUI
      */
     public AerolineasUI() {
-        initComponents();
+        initComponents();       
     }
 
     /**
@@ -40,11 +42,10 @@ public class AerolineasUI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Agencia de viajes");
-        setPreferredSize(new java.awt.Dimension(400, 260));
         setResizable(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)), "Aerolineas"));
@@ -78,23 +79,23 @@ public class AerolineasUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2))
                                 .addGap(34, 34, 34)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                                    .addComponent(jTextField1))))
-                        .addGap(0, 65, Short.MAX_VALUE)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 71, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -109,9 +110,9 @@ public class AerolineasUI extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -159,7 +160,31 @@ public class AerolineasUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        
+        Date fechaActual = new Date();
+        if ("".equals(jTextField1.getText()) || "".equals(jTextField2.getText()) || jDateChooser1.getDate() == null){
+            JOptionPane.showMessageDialog(null, "Por favor complete la información", "Información incompleta", JOptionPane.WARNING_MESSAGE);
+        }        
+        
+        else if (jDateChooser1.getDate().compareTo(fechaActual) < 0){
+             JOptionPane.showMessageDialog(null, "La fecha de vigencia debe ser mayor a la fecha actual", "Validación de datos", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        else {
+            
+            try
+            {
+                long numeroRegistro = Long.parseLong(jTextField1.getText());
+                ControlAerolineas control = new ControlAerolineas();
+                control.CrearAerolinea(numeroRegistro, jTextField2.getText(), jDateChooser1.getDate());
+                JOptionPane.showMessageDialog(null, "Aerolínea guardada exitosamente", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            catch(Exception ex)
+            {
+                JOptionPane.showMessageDialog(null, "Por favor valide los datos ingresados", "Error durante el proceso", JOptionPane.ERROR_MESSAGE);
+            }    
+        }        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -200,6 +225,7 @@ public class AerolineasUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -207,6 +233,5 @@ public class AerolineasUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

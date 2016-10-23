@@ -5,10 +5,30 @@
  */
 package agenciaviajes.administracion;
 
+import agenciaviajes.dbconector.ContextoDatos;
+import java.util.Date;
+
 /**
  *
  * @author JuanFernando
  */
 public class ControlAerolineas {
     
+    public Aerolineas CrearAerolinea(long numeroRegistro, String nombre, Date fechafinVigencia) {
+        Aerolineas aerolinea = new Aerolineas();
+        aerolinea.setNumeroRegistro(numeroRegistro);
+        aerolinea.setNombre(nombre);
+        aerolinea.setFechaFinVigencia(fechafinVigencia);
+        
+        ContextoDatos contexto = new ContextoDatos("temp", "temp", "", "");
+        boolean conectado = contexto.Conectar();
+        
+        if (conectado) {
+            return aerolinea;
+        }
+       
+        else {
+           return null;
+        }
+    }            
 }

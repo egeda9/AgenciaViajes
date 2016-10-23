@@ -369,20 +369,16 @@ public class CheckinUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if ("".equals(jTextField6.getText()) || "".equals(jTextField7.getText()) || "".equals(jTextField8.getText()))
-        {
+        if ("".equals(jTextField6.getText()) || "".equals(jTextField7.getText()) || "".equals(jTextField8.getText())) {
             JOptionPane.showMessageDialog(null, "Por favor complete la información de Check-in", "Información incompleta", JOptionPane.WARNING_MESSAGE);
         }
         
-        else if ("".equals(jTextField9.getText()) || "".equals(jTextField10.getText())) 
-        {
+        else if ("".equals(jTextField9.getText()) || "".equals(jTextField10.getText())) {
             JOptionPane.showMessageDialog(null, "Pasajero inválido", "Información incompleta", JOptionPane.WARNING_MESSAGE);
         }
         
-        else
-        {
-            try
-            {
+        else {
+            try {
                 int hora = Integer.parseInt(jTextField6.getText());
                 int minuto = Integer.parseInt(jTextField7.getText());
                 

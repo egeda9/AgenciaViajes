@@ -37,7 +37,7 @@ public class BusquedaVuelo extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
@@ -74,13 +74,7 @@ public class BusquedaVuelo extends javax.swing.JPanel {
 
         jLabel4.setText("Fecha de viaje:");
         add(jLabel4);
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        add(jTextField1);
+        add(jDateChooser1);
 
         jButton2.setText("Volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -107,10 +101,6 @@ public class BusquedaVuelo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
         this.getParent().add(new ListarVuelo());
@@ -128,9 +118,9 @@ public class BusquedaVuelo extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,6 +6,7 @@
 package agenciaviajes.administracion;
 
 import agenciaviajes.HomeUI;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -53,10 +54,10 @@ public class AeronavesUI extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
@@ -140,12 +141,6 @@ public class AeronavesUI extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-
         jLabel9.setText("#");
 
         jLabel10.setText("#");
@@ -174,7 +169,7 @@ public class AeronavesUI extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel10)))
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -216,10 +211,10 @@ public class AeronavesUI extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -271,7 +266,7 @@ public class AeronavesUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -292,10 +287,6 @@ public class AeronavesUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (homePage == null){
             homePage = new HomeUI();
@@ -305,7 +296,41 @@ public class AeronavesUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, "Aeronave registrada exitosamente", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);                                
+        
+        Date fechaActual = new Date();
+        if ("".equals(jTextField1.getText()) || "".equals(jTextField2.getText()) || jDateChooser1.getDate() == null
+                || "".equals(jTextField3.getText()) || "".equals(jTextField4.getText())
+                || "".equals(jTextField6.getText()) || "".equals(jTextField7.getText())
+                || "".equals(jTextField8.getText())){
+            JOptionPane.showMessageDialog(null, "Por favor complete la información", "Información incompleta", JOptionPane.WARNING_MESSAGE);
+        }       
+        
+        else if (jDateChooser1.getDate().compareTo(fechaActual) > 0){
+            JOptionPane.showMessageDialog(null, "La fecha de ultima revisión debe ser menor a la fecha actual", "Validación de datos", JOptionPane.WARNING_MESSAGE);
+        }
+        
+        else {
+            try
+            {
+                long numeroMatricula = Long.parseLong(jTextField1.getText());
+                int numeroPasajeros = Integer.parseInt(jTextField2.getText());
+                int numeroTripulantes = Integer.parseInt(jTextField3.getText());
+                int horasVuelo = Integer.parseInt(jTextField4.getText());
+                int primeraClase = Integer.parseInt(jTextField6.getText());
+                int ejecutiva = Integer.parseInt(jTextField7.getText());
+                int negocios = Integer.parseInt(jTextField8.getText());
+                String aerolinea = jComboBox1.getSelectedItem().toString();
+                ControlAeronaves control = new ControlAeronaves();
+                control.CrearAeronave(numeroMatricula, numeroPasajeros, numeroTripulantes, 
+                        horasVuelo, jDateChooser1.getDate(), primeraClase, ejecutiva, negocios, 1);
+                JOptionPane.showMessageDialog(null, "Aeronave guardada exitosamente", "Proceso completado", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            catch(Exception ex)
+            {
+                JOptionPane.showMessageDialog(null, "Por favor valide los datos ingresados", "Error durante el proceso", JOptionPane.ERROR_MESSAGE);
+            } 
+        }        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -348,6 +373,7 @@ public class AeronavesUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -370,7 +396,6 @@ public class AeronavesUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
