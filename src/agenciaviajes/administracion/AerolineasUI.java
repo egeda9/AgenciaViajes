@@ -162,7 +162,7 @@ public class AerolineasUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         Date fechaActual = new Date();
-        if ("".equals(jTextField1.getText()) || "".equals(jTextField2.getText()) || jDateChooser1.getDate() == null){
+        if ("".equals(jTextField1.getText())){
             JOptionPane.showMessageDialog(null, "Por favor complete la información", "Información incompleta", JOptionPane.WARNING_MESSAGE);
         }        
         

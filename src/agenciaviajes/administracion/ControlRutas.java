@@ -19,7 +19,6 @@ public class ControlRutas {
         ruta.setNumeroMillas(numeroMillas);
         ruta.setNumeroRegistro(numeroRegistro);
         ruta.setTipoVuelo(tipoVuelo);
-
         
         ContextoDatos contexto = new ContextoDatos("temp", "temp", "", "");
         boolean conectado = contexto.Conectar();
